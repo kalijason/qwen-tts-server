@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qwen-tts-server"
+version = "1.0.0"
+description = "Qwen3-TTS HTTP API Server - AI-powered text-to-speech"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Jason", email = "kalijason@gmail.com"}
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "flask>=2.0",
+    "torch>=2.0",
+    "soundfile",
+    "qwen-tts",
+    "numpy",
+]
+
+[project.scripts]
+qwen-tts = "qwen_tts_server:main"
+
+[project.urls]
+Homepage = "https://github.com/kalijason/qwen-tts-server"
+
+[tool.setuptools]
+py-modules = ["qwen_tts_server"]
